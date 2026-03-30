@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
 import { ChecklistDemo } from "./ChecklistDemo";
 
@@ -38,20 +39,24 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-            <motion.button
-              className="glow-button px-8 py-3 sm:py-3.5 rounded-full bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm transition-colors"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Get Early Access
-            </motion.button>
-            <motion.button
-              className="px-8 py-3 sm:py-3.5 rounded-full border border-white/10 hover:border-white/25 text-white/70 hover:text-white font-medium text-sm transition-all"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              See How It Works
-            </motion.button>
+            <Link href="/dashboard">
+              <motion.button
+                className="glow-button w-full px-8 py-3 sm:py-3.5 rounded-full bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm transition-colors"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Start Your Application
+              </motion.button>
+            </Link>
+            <Link href="#how-it-works">
+              <motion.button
+                className="w-full px-8 py-3 sm:py-3.5 rounded-full border border-white/10 hover:border-white/25 text-white/70 hover:text-white font-medium text-sm transition-all"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                See How It Works
+              </motion.button>
+            </Link>
           </div>
 
           <div className="hidden sm:flex items-center gap-6 mt-10 justify-center lg:justify-start text-sm text-white/30">
